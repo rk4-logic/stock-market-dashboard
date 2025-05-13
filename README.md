@@ -13,8 +13,12 @@ pnpm dev
 # or
 bun dev
 ```
+Then, open another terminal in your code editor and run the backend server: 
+"node server/index.js"
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This backend server is required to serve real-time stock market updates to the dashboard via WebSocket.
+
+Now, open http://localhost:3000 in your browser to see the app in action.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

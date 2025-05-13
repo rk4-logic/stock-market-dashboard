@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.sidebar-transition {
+  transition: transform 0.3s ease, width 0.3s ease;
+}

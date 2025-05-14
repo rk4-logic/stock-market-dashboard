@@ -9,12 +9,12 @@ import { useSidebar } from '../providers/sidebar-provider'
 
 const menuItems = [
   { name: "Dashboard", id: "/", icon: <LineChart className="h-5 w-5" /> },
-  { name: "Bhav Copy", id: "bhavcopy", icon: <Copy className="h-5 w-5" /> },
+  { name: "Option Chain", id: "option-chain", icon: <CandlestickChart className="h-5 w-5" /> },
+  // { name: "Bhav Copy", id: "bhavcopy", icon: <Copy className="h-5 w-5" /> },
+  { name: "Participant Wise OI", id: "participantwise-oi", icon: <BarChart2 className="h-5 w-5" /> },
   { name: "Market Overview", id: "market-overview", icon: <Eye className="h-5 w-5" /> },
   { name: "Top Gainers/Losers", id: "gainers-losers", icon: <TrendingUp className="h-5 w-5" /> },
   { name: "Technical Analysis", id: "technical-analysis", icon: <Activity className="h-5 w-5" /> },
-  { name: "Participant Wise OI", id: "participantwise-oi", icon: <BarChart2 className="h-5 w-5" /> },
-  { name: "Option Chain", id: "option-chain", icon: <CandlestickChart className="h-5 w-5" /> }
 ]
 
 export function Sidebar() {

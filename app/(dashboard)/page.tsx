@@ -8,4 +8,8 @@ export default function DashboardPage() {
       <DashboardCards />
     </div>
   )
+<<<<<<< HEAD
 };
+=======
+}
+>>>>>>> aac3d0bef4d573a1ce45605945c30f922c3522aa

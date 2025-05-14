@@ -10,11 +10,11 @@ import { useSidebar } from '../providers/sidebar-provider'
 const menuItems = [
   { name: "Dashboard", id: "/", icon: <LineChart className="h-5 w-5" /> },
   { name: "Option Chain", id: "option-chain", icon: <CandlestickChart className="h-5 w-5" /> },
-  // { name: "Bhav Copy", id: "bhavcopy", icon: <Copy className="h-5 w-5" /> },
+  { name: "Bhav Copy", id: "bhavcopy", icon: <Copy className="h-5 w-5" /> },
   { name: "Participant Wise OI", id: "participantwise-oi", icon: <BarChart2 className="h-5 w-5" /> },
   { name: "Market Overview", id: "market-overview", icon: <Eye className="h-5 w-5" /> },
   { name: "Top Gainers/Losers", id: "gainers-losers", icon: <TrendingUp className="h-5 w-5" /> },
-  { name: "Technical Analysis", id: "technical-analysis", icon: <Activity className="h-5 w-5" /> },
+  { name: "Technical Analysis", id: "technical-analysis", icon: <Activity className="h-5 w-5" /> }
 ]
 
 export function Sidebar() {
@@ -50,9 +50,8 @@ export function Sidebar() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed md:relative z-50 h-screen bg-gray-800 text-white transition-all duration-300 ${
-          isOpen ? 'w-64 translate-x-0' : '-translate-x-full md:translate-x-0 md:w-20'
-        }`}
+        className={`fixed md:relative z-50 h-screen bg-gray-800 text-white transition-all duration-300 ${isOpen ? 'w-64 translate-x-0' : '-translate-x-full md:translate-x-0 md:w-20'
+          }`}
       >
         <div className="h-full flex flex-col">
           {/* Close Button (Mobile) */}
@@ -80,9 +79,8 @@ export function Sidebar() {
                 <li key={item.id}>
                   <Link
                     href={`/${item.id}`}
-                    className={`flex items-center gap-3 p-3 rounded-md hover:bg-gray-700 transition-colors ${
-                      pathname?.includes(item.id) ? 'bg-gray-700' : ''
-                    } ${!isOpen && 'justify-center'}`}
+                    className={`flex items-center gap-3 p-3 rounded-md hover:bg-gray-700 transition-colors ${pathname?.includes(item.id) ? 'bg-gray-700' : ''
+                      } ${!isOpen && 'justify-center'}`}
                   >
                     <span className={`${!isOpen && 'mx-auto'}`}>
                       {item.icon}

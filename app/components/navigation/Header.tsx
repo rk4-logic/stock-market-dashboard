@@ -53,7 +53,7 @@ export function Header() {
         <Menu className="h-5 w-5" />
       </button>
 
-      <h1 className="text-xl font-semibold hidden md:block">StockDash</h1>
+      <h1 className="text-xl font-semibold hidden md:block">Stock Market Dashboard</h1>
 
       <div className="relative w-full md:w-1/3 ml-4">
         <div className="relative">

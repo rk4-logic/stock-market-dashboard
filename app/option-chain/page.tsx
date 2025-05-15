@@ -2,7 +2,7 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import { Bar, Line } from 'react-chartjs-2';
+// import { Bar, Line } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -14,8 +14,19 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
-import zoomPlugin from 'chartjs-plugin-zoom';
 import { equitySymbols } from '../components/SymbolData';
+import dynamic from 'next/dynamic';
+
+// Dynamic import for Bar and Line charts to avoid SSR issues
+const Bar = dynamic(
+  () => import('react-chartjs-2').then((mod) => mod.Bar),
+  { ssr: false }
+);
+
+const Line = dynamic(
+  () => import('react-chartjs-2').then((mod) => mod.Line),
+  { ssr: false }
+);
 
 interface OptionData {
     strikePrice: number;
@@ -55,17 +66,22 @@ export default function OptionChain() {
     };
 
     useEffect(() => {
+        // Register core Chart.js components FIRST
         ChartJS.register(
-            CategoryScale,
+            CategoryScale, // Add this explicitly
             LinearScale,
             BarElement,
             LineElement,
             PointElement,
             Title,
             Tooltip,
-            Legend,
-            zoomPlugin // Now safe to use browser APIs
+            Legend
         );
+
+        // Then load zoom plugin dynamically
+        import('chartjs-plugin-zoom').then((zoomPlugin) => {
+            ChartJS.register(zoomPlugin.default);
+        });
     }, []);
 
     const fetchData = async () => {

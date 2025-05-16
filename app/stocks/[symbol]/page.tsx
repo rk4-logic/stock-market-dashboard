@@ -1,16 +1,7 @@
 'use client'
 
 import { useParams } from 'next/navigation'
-import { ErrorBoundary } from 'react-error-boundary'
 import TechnicalChart from '../TechnicalChart'
-
-function ChartErrorFallback({ error }: { error: Error }) {
-  return (
-    <div className="p-4 bg-red-100 text-red-800 rounded">
-      Chart Error: {error.message}
-    </div>
-  )
-}
 
 export default function StockPage() {
   const params = useParams()
@@ -21,10 +12,8 @@ export default function StockPage() {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <ErrorBoundary FallbackComponent={ChartErrorFallback}>
+    <div className="container mx-auto p-4">      
         <TechnicalChart symbol={symbol} />
-      </ErrorBoundary>
     </div>
   )
 }

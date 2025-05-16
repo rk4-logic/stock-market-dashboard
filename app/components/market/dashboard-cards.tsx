@@ -3,7 +3,8 @@
 
 import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
-import { Oval } from 'react-loader-spinner';
+import { ClipLoader } from 'react-spinners';
+import { useRouter } from 'next/navigation';
 import CountryIndicesHero from './country-indices-hero';
 import MajorIndices from './major-indices';
 import MarketHighlights from './market-highlights';
@@ -46,13 +47,7 @@ export default function DashboardCards() {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <Oval
-          height={80}
-          width={80}
-          color="#4A90E2"
-          visible={true}
-          ariaLabel="oval-loading"
-        />
+        <ClipLoader size={80} color="#4A90E2" />
       </div>
     );
   }

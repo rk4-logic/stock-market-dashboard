@@ -1,4 +1,4 @@
-#1. Install Dependencies
+# 1. Install Dependencies
 
 
     In the root of your project, run:
@@ -10,7 +10,7 @@
     This installs all dependencies for the project.
 
 
-#2. Run the Frontend
+# 2. Run the Frontend
 
 
     To start the frontend development server, run:
@@ -22,7 +22,7 @@
     This will start the Next.js app on http://localhost:3000.
 
 
-#3. Run the Backend Server
+# 3. Run the Backend Server
 
 
     In a new terminal of code editor, navigate to the root of your project and run:
